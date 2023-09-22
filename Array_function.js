@@ -1,4 +1,8 @@
 array=[10,11,12,13,14];
+obj={
+    sum:0,
+    product:1
+}
 //----------Arrow function---------
 const sum=(a,b)=>a+b;
 console.log(sum(1,3));
@@ -26,3 +30,11 @@ arr =array.map((val)=>{
 });
 
 console.log(arr);
+
+//-------- Reduce function -------------
+let res=0;
+array.reduce(function(acc,val){
+    obj.sum +=val;
+}(obj));
+
+console.log(obj);
