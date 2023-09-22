@@ -13,9 +13,20 @@ for (const i of array) {
 }
 
 // --------------for in loop------------
-//iterating through the object
+//iterating through the object and array
 for (const key in obj) {
     console.log(key +':'+obj[key]);
 }
 
+for (const key in array) {
+    console.log(key +' :  '+array[key]);
+}
 
+
+//---------------------for each loop --------------------
+// Summation of elements of an array using for each loop
+let res=0;
+array.forEach(function(val,index,arr){
+    res+=val;
+});
+console.log(res);
