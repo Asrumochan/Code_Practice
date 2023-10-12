@@ -1,2 +1,75 @@
-let v=12;
-let v=2;
+arr=[{
+    "id": 1,
+    "first_name": "Karylin",
+    "last_name": "Bolmann",
+    "email": "kbolmann0@newsvine.com",
+    "gender": "Female",
+    "ip_address": "24.93.26.120"
+  }, {
+    "id": 2,
+    "first_name": "Javier",
+    "last_name": "Cumpton",
+    "email": "jcumpton1@spiegel.de",
+    "gender": "Male",
+    "ip_address": "34.240.13.136"
+  }, {
+    "id": 3,
+    "first_name": "Beret",
+    "last_name": "Perle",
+    "email": "bperle2@csmonitor.com",
+    "gender": "Female",
+    "ip_address": "112.112.52.139"
+  }, {
+    "id": 4,
+    "first_name": "Filia",
+    "last_name": "Golda",
+    "email": "fgolda3@cyberchimps.com",
+    "gender": "Female",
+    "ip_address": "87.169.72.90"
+  }, {
+    "id": 5,
+    "first_name": "Rurik",
+    "last_name": "Cornils",
+    "email": "rcornils4@typepad.com",
+    "gender": "Male",
+    "ip_address": "68.113.111.197"
+  }, {
+    "id": 6,
+    "first_name": "Humberto",
+    "last_name": "Bemrose",
+    "email": "hbemrose5@seesaa.net",
+    "gender": "Male",
+    "ip_address": "233.52.165.223"
+  }, {
+    "id": 7,
+    "first_name": "Sawyere",
+    "last_name": "Moult",
+    "email": "smoult6@hatena.ne.jp",
+    "gender": "Male",
+    "ip_address": "88.38.65.186"
+  }, {
+    "id": 8,
+    "first_name": "Kleon",
+    "last_name": "Lepere",
+    "email": "klepere7@ustream.tv",
+    "gender": "Male",
+    "ip_address": "45.36.17.155"
+  }, {
+    "id": 9,
+    "first_name": "Robbert",
+    "last_name": "Dunkley",
+    "email": "rdunkley8@china.com.cn",
+    "gender": "Male",
+    "ip_address": "102.36.173.144"
+  }, {
+    "id": 10,
+    "first_name": "Nevile",
+    "last_name": "Larkby",
+    "email": "nlarkby9@china.com.cn",
+    "gender": "Male",
+    "ip_address": "255.41.32.74"
+  }];
+
+  console.log(arr.filter((val,i,arr)=>{
+    return val.id <5 ;
+  }));
