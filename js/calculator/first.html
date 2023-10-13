@@ -8,10 +8,33 @@
     <title>Calculator</title>
     <script>
         function act(){
-            var n = document.getElementById("num");
-            var n1 = document.getElementById("year1");
-            var n2 = document.getElementById("year2");
-            n.textContent=Number(n2.value)-Number(n1.value);
+            var date1 = new Date(document.getElementById("date1").value) ;
+            var date2 = new Date(document.getElementById("date2").value) ;
+            var num=document.getElementById('num');
+            num.style.backgroundColor='limegreen'
+            var day1=date1.getDate() , day2=date2.getDate(),day=0;
+            var mon1=date1.getMonth()+1 , mon2=date2.getMonth()+1,month=0;
+            var year1=date1.getFullYear() , year2=date2.getFullYear(),year=0;
+            if(year2 < year1)
+            {
+            year2=prompt('Entered year should be more than the birth year:')
+            }
+            if(day1 > day2){
+                mon2=mon2-1;
+              day=day2+30-day1
+            }
+            else {
+                day=day2-day1
+            }
+            if(mon1 > mon2){
+                year2=year2-1;
+              month= mon2+12-mon1
+            }
+            else {
+                month= mon2-mon1
+            }
+            year=year2-year1
+            num.innerHTML="<h2>Result</h2> Your age is : "+year+" years "+month+" months "+day+" days <br><br><p></p>"
         }
     </script>
 </head>
@@ -23,113 +46,17 @@
                 <div class="content">
                     <div class="content-item">
                         <label>Date of Birth :</label>
-                        <select>
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
-                        </select>
-                        <select>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                            <option>24</option>
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                            <option>30</option>
-                            <option>31</option>
-                        </select>
-                        <input type="number" id="year1">
-                        <input type="date">
+                        <input type="date" id="date1">
                     </div>
                     <div class="content-item">
                         <label>Age at the Date of :</label>
-                        <select>
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
-                        </select>
-                        <select>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                            <option>24</option>
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                            <option>30</option>
-                            <option>31</option>
-                        </select>
-                        <input type="number" id="year2">
-                        <input type="date">
+                        <input type="date" id="date2">
                     </div>
                     <button onclick="act()">Calculate</button>
                 </div>
                 <div class="result">
-                    <h2>Result</h2>
                     <p id="num"></p>
+                    
                 </div>
     </div>
 </body>

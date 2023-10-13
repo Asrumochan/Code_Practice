@@ -23,6 +23,7 @@ body{
 }
 .content-item{
     margin-top: 20px;
+    display: flex;
 }
 button{
     font-size: medium;
@@ -39,8 +40,7 @@ button:hover{
     cursor: pointer;
 }
 .result{
-    height: 100px;
+    height: 00px;
     width: 100%;
-    background-color: rgba(79, 216, 40, 0.751);
-    color: rgb(20, 18, 18);
+    color: #000000 ;
 }
