@@ -6,6 +6,19 @@ body{
     width: 70%;
     margin: auto;
 }
+.top
+{
+    display: flex;
+    justify-content: space-between;
+}
+.theme{
+    font-size: medium;
+    margin-top: 20px;
+    height: 30px;
+    width: 200px;
+    background-color: rgb(12, 12, 12);
+    color: aliceblue;
+}
 .heading{
     background-color: rgb(20, 73, 169);
     color: rgb(249, 248, 246);
@@ -30,12 +43,12 @@ button{
     margin-top: 20px;
     height: 30px;
     width: 100px;
-    background-color: rgb(37, 155, 5);
-    color: aliceblue;
+    background-color: white;
+    color: black;
 }
 button:hover{
-    color: black;
-    background-color: white;
+color: aliceblue;
+    background-color: rgb(85, 177, 59);
     box-shadow: 5px 5px 5px black;
     cursor: pointer;
 }

@@ -7,17 +7,35 @@
     <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
     <script>
+        function theme(){
+        if(document.getElementById('th').textContent.includes('dark')){
+            document.getElementById('th').style.backgroundColor='white';
+            document.getElementById('th').style.color='black';
+            document.getElementById('th').textContent='light theme';
+            document.getElementById('label1').style.color='black';
+            document.getElementById('label2').style.color='black';
+            document.body.style.backgroundColor='black';
+            document.body.style.color='white';
+        }
+        else{
+        document.getElementById('th').textContent='dark theme';
+        document.getElementById('th').style.backgroundColor='black';
+            document.getElementById('th').style.color='white';
+            document.body.style.backgroundColor='white'
+            document.body.style.color='black';
+        }
+    } 
         function act(){
             var date1 = new Date(document.getElementById("date1").value) ;
             var date2 = new Date(document.getElementById("date2").value) ;
             var num=document.getElementById('num');
-            num.style.backgroundColor='limegreen'
+            num.style.backgroundColor='limegreen';
             var day1=date1.getDate() , day2=date2.getDate(),day=0;
             var mon1=date1.getMonth()+1 , mon2=date2.getMonth()+1,month=0;
             var year1=date1.getFullYear() , year2=date2.getFullYear(),year=0;
             if(year2 < year1)
             {
-            year2=prompt('Entered year should be more than the birth year:')
+            year2=prompt('Entered year should be more than the birth year:');
             }
             if(day1 > day2){
                 mon2=mon2-1;
@@ -34,22 +52,31 @@
                 month= mon2-mon1
             }
             year=year2-year1
+            if(document.getElementById('th').textContent.includes('dark')){
+                num.style.color='black'
+            }
+            else{
+                num.style.color='white'
+            }
             num.innerHTML="<h2>Result</h2> Your age is : "+year+" years "+month+" months "+day+" days <br><br><p></p>"
         }
     </script>
 </head>
 <body>
     <div class="container">
-                <h1>Age Calculator</h1>
+        <div class="top">
+            <h1>Age Calculator</h1>
+            <button class="theme" id="th" onclick="theme()">dark theme</button>
+        </div>
                 <p>The Age Calculator can determine the age or interval between two dates. The calculated age will be displayed in years, months, weeks, days, hours, minutes, and seconds.</p>
                 <div class="heading">Modify the values and click the Calculate button for use</div>
                 <div class="content">
                     <div class="content-item">
-                        <label>Date of Birth :</label>
+                        <label id="label1">Date of Birth :</label>
                         <input type="date" id="date1">
                     </div>
                     <div class="content-item">
-                        <label>Age at the Date of :</label>
+                        <label id="label2">Age at the Date of :</label>
                         <input type="date" id="date2">
                     </div>
                     <button onclick="act()">Calculate</button>
