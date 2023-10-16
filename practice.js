@@ -4,6 +4,6 @@ const person = {
   age: 30
 };
 
-const jsonPerson = JSON.stringify(person);
-
-console.log(jsonPerson);
+for (const key in person) {
+  console.log(key, person.key);
+}
