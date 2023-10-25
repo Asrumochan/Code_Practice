@@ -6,7 +6,7 @@ async function getData(){
     console.log(val.name);
    })
     }catch(err){
-        console.log(err)
+        console.log("Error:"+err)
     }
 }
 
