@@ -11,5 +11,3 @@
 // }
 
 // getData();
-let a= 'laxel0@printfriendly.com' ;
-console.log();
