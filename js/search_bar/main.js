@@ -60,7 +60,23 @@ function display_Users(){
             <td>${users[i].email.slice(users[i].email.indexOf('@')+1,users[i].email.indexOf('.'))}</td>
            </tr>`
  }
-
-
   document.getElementById('user_data').innerHTML=rows;
+}
+function searchInput() {
+    let filter=document.getElementById('myInput').value.toUpperCase();
+    let myTable=document.getElementById('user_data')
+    let tr=myTable.getElementsByTagName('tr');
+    for (let i = 0; i < tr.length; i++) {
+        let td=tr[i].getElementsByTagName('td')[1];
+        if(td){
+            let textValue=td.innerHTML|| td.textContent;
+            if(textValue.toUpperCase().indexOf(filter) > -1){
+                tr[i].style.display='';
+            }
+            else{
+                tr[i].style.display='none';
+            }
+        }
+    }
+
 }

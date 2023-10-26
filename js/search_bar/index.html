@@ -8,12 +8,12 @@
     <body onload="display_Users()">
        <nav class="navbar navbar-dark bg-dark">
         <a href="#" class="navbar-brand">Employee Data</a>
-        <p class="navbar-brand">Search🔍<input type="search"></p>
+        <p class="navbar-brand">Search🔍<input type="search" id="myInput" onkeyup="searchInput()"></p>
        </nav>
        <div class="container">
         <div class="row">
             <div class="col-12">
-                <table class="table table-striped">
+                <table class="table table-striped" >
                     <thead class="bg-warning text-white">
                         <th>Id</th>
                         <th>Name</th>
