@@ -57,8 +57,7 @@ function display_Users(){
             <td>${users[i].name}</td>
             <td>${users[i].email}</td>
             <td>${users[i].gender.substring(0,1)}</td>
-            <td>${users[i].email}</td>
-    
+            <td>${users[i].email.slice(users[i].email.indexOf('@')+1,users[i].email.indexOf('.'))}</td>
            </tr>`
  }
 
