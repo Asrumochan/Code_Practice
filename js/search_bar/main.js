@@ -64,7 +64,7 @@ function display_Users(){
 }
 function searchInput() {
     let filter=document.getElementById('myInput').value.toUpperCase();
-    let myTable=document.getElementById('user_data')
+    let myTable=document.getElementById('user_data');
     let tr=myTable.getElementsByTagName('tr');
     for (let i = 0; i < tr.length; i++) {
         let td=tr[i].getElementsByTagName('td')[1];
