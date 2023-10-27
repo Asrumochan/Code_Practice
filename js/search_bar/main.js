@@ -50,33 +50,52 @@ let users=[{"id":1,"name":"Luca","email":"laxel0@printfriendly.com","gender":"Ma
 {"id":50,"name":"Caressa","email":"cclutton1d@ocn.ne.jp","gender":"Female"}]
 
 function display_Users(){
- let rows=""
- for(let i=0;i<=users.length-1;i++){
-    rows+=`<tr>
-            <td>${users[i].id}</td>
-            <td>${users[i].name}</td>
-            <td>${users[i].email}</td>
-            <td>${users[i].gender.substring(0,1)}</td>
-            <td>${users[i].email.slice(users[i].email.indexOf('@')+1,users[i].email.indexOf('.'))}</td>
-           </tr>`
+ let row_1="",row_2="";
+ for(let i=0;i<users.length;i++){
+    if(i<20){
+        row_1+=`<tr>
+        <td>${users[i].id}</td>
+        <td>${users[i].name}</td>
+        <td>${users[i].email}</td>
+        <td>${users[i].gender}</td>
+        <td>${users[i].email.slice(users[i].email.indexOf('@')+1,users[i].email.indexOf('.'))}</td>
+       </tr>`
+    }
+    else{
+        row_2+=`<tr>
+        <td>${users[i].id}</td>
+        <td>${users[i].name}</td>
+        <td>${users[i].email}</td>
+        <td>${users[i].gender}</td>
+        <td>${users[i].email.slice(users[i].email.indexOf('@')+1,users[i].email.indexOf('.'))}</td>
+       </tr>`
+       console.log('page 2');
+    }
  }
-  document.getElementById('user_data').innerHTML=rows;
+//  document.getElementById('user_data_1').innerHTML = row_1;
+ document.getElementById('user_data_2').innerHTML = row_2;
 }
 function searchInput() {
     let filter=document.getElementById('myInput').value.toUpperCase();
     let myTable=document.getElementById('user_data');
     let tr=myTable.getElementsByTagName('tr');
+    let count=0;
     for (let i = 0; i < tr.length; i++) {
         let td=tr[i].getElementsByTagName('td')[1];
         if(td){
             let textValue=td.innerHTML|| td.textContent;
             if(textValue.toUpperCase().indexOf(filter) > -1){
                 tr[i].style.display='';
+                count++;
             }
             else{
                 tr[i].style.display='none';
             }
         }
     }
+    // if(count==0){
+    //     document.getElementById('display').innerHTML='"NO record found "'
+    //     // alert()
+    // }
 
 }
