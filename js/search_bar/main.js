@@ -49,8 +49,8 @@ let users=[{"id":1,"name":"Luca","email":"laxel0@printfriendly.com","gender":"Ma
 {"id":49,"name":"Freddie","email":"fstrivens1c@wikia.com","gender":"Female"},
 {"id":50,"name":"Caressa","email":"cclutton1d@ocn.ne.jp","gender":"Female"}]
 
-function display_Users(){
- let row_1="",row_2="";
+function display_User_1(){
+ let row_1="";
  for(let i=0;i<users.length;i++){
     if(i<20){
         row_1+=`<tr>
@@ -61,41 +61,41 @@ function display_Users(){
         <td>${users[i].email.slice(users[i].email.indexOf('@')+1,users[i].email.indexOf('.'))}</td>
        </tr>`
     }
-    else{
-        row_2+=`<tr>
-        <td>${users[i].id}</td>
-        <td>${users[i].name}</td>
-        <td>${users[i].email}</td>
-        <td>${users[i].gender}</td>
-        <td>${users[i].email.slice(users[i].email.indexOf('@')+1,users[i].email.indexOf('.'))}</td>
-       </tr>`
-       console.log('page 2');
-    }
  }
-//  document.getElementById('user_data_1').innerHTML = row_1;
- document.getElementById('user_data_2').innerHTML = row_2;
+ document.getElementById('user_data_1').innerHTML = row_1;
 }
-function searchInput() {
-    let filter=document.getElementById('myInput').value.toUpperCase();
-    let myTable=document.getElementById('user_data');
-    let tr=myTable.getElementsByTagName('tr');
-    let count=0;
-    for (let i = 0; i < tr.length; i++) {
-        let td=tr[i].getElementsByTagName('td')[1];
-        if(td){
-            let textValue=td.innerHTML|| td.textContent;
-            if(textValue.toUpperCase().indexOf(filter) > -1){
-                tr[i].style.display='';
-                count++;
-            }
-            else{
-                tr[i].style.display='none';
-            }
+function display_User_2(){
+    row_2="";
+    for(let i=0;i<users.length;i++){
+        if(i >=20 && i<40){
+            row_2+=`<tr>
+            <td>${users[i].id}</td>
+            <td>${users[i].name}</td>
+            <td>${users[i].email}</td>
+            <td>${users[i].gender}</td>
+            <td>${users[i].email.slice(users[i].email.indexOf('@')+1,users[i].email.indexOf('.'))}</td>
+           </tr>`
         }
     }
+    document.getElementById('user_data_2').innerHTML = row_2;
+}
+function display_User_3(){
+    row_3="";
+    for(let i=0;i<users.length;i++){
+        if(i >=40){
+            row_3+=`<tr>
+            <td>${users[i].id}</td>
+            <td>${users[i].name}</td>
+            <td>${users[i].email}</td>
+            <td>${users[i].gender}</td>
+            <td>${users[i].email.slice(users[i].email.indexOf('@')+1,users[i].email.indexOf('.'))}</td>
+           </tr>`
+        }
+    }
+    document.getElementById('user_data_3').innerHTML = row_3;
+}
     // if(count==0){
     //     document.getElementById('display').innerHTML='"NO record found "'
     //     // alert()
     // }
 
-}
