@@ -1,13 +1,5 @@
-async function getData(){
-    try{
-   const res=await fetch('https://jsonplaceholder.typicode.com/users');
-   const result=await res.json();
-   result.map((val)=>{
-    console.log(val.id);
-   })
-    }catch(err){
-        console.log("Error:"+err)
-    }
-}
+const input =require('prompt-sync')();
 
-getData();
+let a=parseInt(input('Enter the number :'));
+let b=parseInt(input('Enter the number :'));
+console.log(a+b);
