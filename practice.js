@@ -3,4 +3,4 @@
 // let a=parseInt(input('Enter the number :'));
 // let b=parseInt(input('Enter the number :'));
 // console.log(a+b);
-console.log("20" < "5");
+console.log("20" < "7");
