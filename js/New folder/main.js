@@ -14,7 +14,7 @@ const getCatData=async ()=>{
     console.log(response);
     let data= await response.json();
     let count=Math.floor(Math.random()*5)
-    msg.innerText=data[count].text;
+    msg.innerText=data[count].text; 
 }
 const getDogData=async ()=>{
     console.log('getting data ........');
